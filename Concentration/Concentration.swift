@@ -11,9 +11,9 @@ import UIKit
 
 class Concentration {
     
-    var cards = [Card]()
+    private(set) var cards = [Card]()
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
             for index in cards.indices {
@@ -38,9 +38,10 @@ class Concentration {
     
     var flipCount = 0
     
-    lazy var timeOfLastCardTouch = CACurrentMediaTime()
+    private lazy var timeOfLastCardTouch = CACurrentMediaTime()
     
     func chooseCard(at index: Int) {
+        assert(cards.indices.contains(index), "Concentration.choosenCard(at: \(index)): chosen index is out of range")
         flipCount += 1
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
@@ -92,7 +93,7 @@ class Concentration {
         }
     }
     
-    func findIndexOfCardWithTheSameId(of index: Int) -> Int? {
+    private func findIndexOfCardWithTheSameId(of index: Int) -> Int? {
         for resultIndex in cards.indices {
             if cards[index].identifier == cards[resultIndex].identifier, index != resultIndex {
                 return resultIndex
@@ -101,13 +102,14 @@ class Concentration {
         return nil
     }
     
-    func timeIntervalFromLastCardTouch() -> Double {
+    private func timeIntervalFromLastCardTouch() -> Double {
         let prevTimeOfLastCardTouch = timeOfLastCardTouch
         timeOfLastCardTouch = CACurrentMediaTime()
         return timeOfLastCardTouch - prevTimeOfLastCardTouch
     }
     
     init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0, "Concentration.init(\(numberOfPairsOfCards)): numberOfPairsOfCards isn't more that 0")
         for _ in 1...numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]
