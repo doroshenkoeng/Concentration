@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad()")
     }
     
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
