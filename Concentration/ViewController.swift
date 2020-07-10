@@ -14,6 +14,10 @@ class ViewController: UIViewController {
         return  (cardButtons.count + 1) / 2
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     @IBOutlet private weak var flipCountLabel: UILabel!
