@@ -19,7 +19,12 @@ class ViewController: UIViewController {
         print("viewDidLoad()")
         print("Log smth")
     }
-    
+
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        print("ViewDidAppear Log")
+    }
+
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     @IBOutlet private weak var flipCountLabel: UILabel!
