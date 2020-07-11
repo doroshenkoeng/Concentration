@@ -13,7 +13,12 @@ class ViewController: UIViewController {
     private var numberOfPairsOfCards: Int {
         return  (cardButtons.count + 1) / 2
     }
-    
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        print("viewWillAppear Log")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad()")
