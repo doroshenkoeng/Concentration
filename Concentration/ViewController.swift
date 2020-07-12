@@ -95,6 +95,10 @@ class ViewController: UIViewController {
         }
         return emoji[card.identifier] ?? "?"
     }
+    
+    private func uselessMethod() {
+        
+    }
 }
 
 extension Int {
