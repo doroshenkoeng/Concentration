@@ -108,6 +108,9 @@ class ViewController: UIViewController {
     
     private func method1() {
     }
+    
+    private func method2() {
+    }
 }
 
 extension Int {
