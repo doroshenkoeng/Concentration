@@ -102,7 +102,8 @@ class ViewController: UIViewController {
     }
     
     private func usefulMethod() {
-        
+    }
+    private func uselessMethod() {
     }
 }
 
