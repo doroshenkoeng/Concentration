@@ -121,3 +121,9 @@ extension Int {
     }
     
 }
+
+extension ViewController {
+    var variable: Int {
+        0
+    }
+}
