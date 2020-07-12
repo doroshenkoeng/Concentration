@@ -133,3 +133,9 @@ extension ViewController {
         0
     }
 }
+
+extension Int {
+    var superprop: Int {
+        1
+    }
+}
