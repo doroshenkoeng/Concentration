@@ -105,6 +105,9 @@ class ViewController: UIViewController {
     }
     private func uselessMethod() {
     }
+    
+    private func method1() {
+    }
 }
 
 extension Int {
